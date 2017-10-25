@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+        <meta charset="utf-8" />
+        <title>Copiando slices</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Code Militia </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/golang.html">golang</a></li>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/copiando-slices.html" rel="bookmark"
+           title="Permalink to Copiando slices">Copiando slices</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-10-25T10:20:00-02:00">
+                Published: Wed 25 October 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/georgio-barbosa-da-fonseca.html">Georgio Barbosa da Fonseca</a>
+        </address>
+<p>In <a href="/category/golang.html">golang</a>.</p>
+
+</footer><!-- /.post-info -->      <h1><a href="/index.md">Code Militia</a></h1>
+<h2>Copiando slices</h2>
+<p>A função builtin <a href="https://golang.org/pkg/builtin/#copy">copy()</a> tem por intuito copiar os items de um slice origem (<strong><em>org</em></strong>) para um slice destino (<strong><em>dst</em></strong>) &#128137;</p>
+<h4>https://golang.org/pkg/builtin/#copy</h4>
+<blockquote>
+<p>The copy built-in function copies elements from a source slice into a destination slice. (As a special case, it also will copy bytes from a string to a slice of bytes.) The source and destination may overlap. Copy returns the number of elements copied, which will be the minimum of len(<strong><em>src</em></strong>) and len(<strong><em>dst</em></strong>).</p>
+<p>Afunção embutida <strong><em>copy</em></strong>(), copia elementos de um slice origem para um slice destino.
+(Em um caso especial, também copia bytes de uma string para um slice de bytes) A origem e o destino podem se sobrepor. Copy retorna a quantidade de elementos copiados, que será no minimo de len(<strong><em>src</em></strong>) e len(<strong><em>dst</em></strong>)</p>
+</blockquote>
+<h2>Exemplo</h2>
+<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">org</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">dst</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+
+    <span class="nx">numOfItems</span> <span class="o">:=</span> <span class="nb">copy</span><span class="p">(</span><span class="nx">dst</span><span class="p">,</span> <span class="nx">org</span><span class="p">)</span>
+
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%d items copiados.\n&quot;</span><span class="p">,</span> <span class="nx">numOfItems</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">dst</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%d =&gt; %d\n&quot;</span><span class="p">,</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3>Saída</h3>
+<div class="highlight"><pre><span></span>10 items copiados.
+0 =&gt; 0
+1 =&gt; 1
+2 =&gt; 2
+3 =&gt; 3
+4 =&gt; 4
+5 =&gt; 5
+6 =&gt; 6
+7 =&gt; 7
+8 =&gt; 8
+9 =&gt; 9
+</pre></div>
+
+
+<h2>Copiando uma string</h2>
+<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">org</span> <span class="o">:=</span> <span class="s">&quot;Olá mundo&quot;</span>
+    <span class="kd">var</span> <span class="nx">dst</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+
+    <span class="nb">copy</span><span class="p">(</span><span class="nx">dst</span><span class="p">,</span> <span class="nx">org</span><span class="p">)</span>
+
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s \n&quot;</span><span class="p">,</span> <span class="nx">dst</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3>Saída</h3>
+<div class="highlight"><pre><span></span>Olá mundo
+</pre></div>
+
+
+<h2>Pequeno truque na função copy()</h2>
+<p>Um dos problemas que tive implementando essa função pela primeira vez, é que não sabia que a quantidade de elementos que serão copiados pela função copy é igual a quantidade de elemtos do slice <strong><em>dst</em></strong>. Então:</p>
+<div class="highlight"><pre><span></span>numOfItemsCopied = len(dst)
+</pre></div>
+
+
+<h3>Exemplo:</h3>
+<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">org</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">dst</span> <span class="p">[]</span><span class="kt">int</span>
+
+    <span class="c1">// Copiando </span>
+    <span class="nb">copy</span><span class="p">(</span><span class="nx">dst</span><span class="p">,</span> <span class="nx">org</span><span class="p">)</span>
+
+    <span class="c1">// Let&#39;s print it !!! </span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">s2</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3>:(</h3>
+<p>Nada foi impresso, não é mesmo? Isso porque <strong><em>dst</em></strong> está vazio.
+copy() copia len(<strong><em>dst</em></strong>) elementos de <strong><em>org</em></strong>, ou nesse caso, 0</p>
+<div class="highlight"><pre><span></span><span class="c1">// Doing it right!!</span>
+<span class="kn">package</span> <span class="nx">main</span>
+
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Definindo um tamanho inicial para dst igual ao tamanho de org</span>
+    <span class="nx">dst</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">org</span><span class="p">))</span>
+
+    <span class="nb">copy</span><span class="p">(</span><span class="nx">dst</span><span class="p">,</span> <span class="nx">org</span><span class="p">)</span>
+
+    <span class="c1">// Let&#39;s print it !!! </span>
+    <span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">i</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">dst</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="s">&quot;=&gt;&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3>Saída</h3>
+<div class="highlight"><pre><span></span>0 =&gt; 1
+1 =&gt; 2
+2 =&gt; 3
+3 =&gt; 4
+4 =&gt; 5
+5 =&gt; 6
+</pre></div>
+
+
+<p>Por hoje é só. &#128640;</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
