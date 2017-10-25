@@ -1,43 +1,97 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!doctype html>
+<html lang="pt" itemscope itemtype="http://schema.org/Person">
 <head>
-        <meta charset="utf-8" />
-        <title>Copiando slices</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title>Copiando slices</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Georgio Barbosa da Fonseca">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+  <link rel="shortcut icon" href="">
+
+  <!-- schema.org -->
+  <meta itemprop="name" content="Code Militia">
+  <meta itemprop="image" content="">
+  <meta itemprop="description" content="">
+
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="https://gfonseca.github.io/theme/css/milligram.css" type="text/css" />
+  <link rel="stylesheet" href="https://gfonseca.github.io/theme/css/custom.css" type="text/css" />
+
+  <!-- Feed Meta Data -->
+
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="">
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://gfonseca.github.io/copiando-slices.html">
+<meta name="twitter:title" content="Code Militia ~ Copiando slices">
+<meta name="twitter:description" content="Code Militia Copiando slices A função builtin copy() tem por intuito copiar os items de um slice origem (org) para um slice destino (dst) 💉 https://golang.org/pkg/builtin/#copy The copy built-in function copies elements from a source slice into a destination slice. (As a special case, it also …">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Code Militia ~ Copiando slices" />
+<meta property="og:description" content="Code Militia Copiando slices A função builtin copy() tem por intuito copiar os items de um slice origem (org) para um slice destino (dst) 💉 https://golang.org/pkg/builtin/#copy The copy built-in function copies elements from a source slice into a destination slice. (As a special case, it also …" />
+<meta property="og:image" content="" />
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Code Militia </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="/category/golang.html">golang</a></li>
-                    <li><a href="/category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/copiando-slices.html" rel="bookmark"
-           title="Permalink to Copiando slices">Copiando slices</a></h1>
-    </header>
+<body>
+    <div class="container">
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-10-25T10:20:00-02:00">
-                Published: Wed 25 October 2017
-        </abbr>
+    <!-- Navbar -->
+      <div class="navbar">
+        <ul>
+            <div>
+                <li>
+                    <a href="https://gfonseca.github.io"><h3>Code Militia</h3></a>
+                </li>
+                <li>
+                </li>
+            </div>
+        </ul>
+      </div>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/georgio-barbosa-da-fonseca.html">Georgio Barbosa da Fonseca</a>
-        </address>
-<p>In <a href="/category/golang.html">golang</a>.</p>
+  <!-- Sidebar -->
+    <sidebar>
+        <ul class="static-item">
 
-</footer><!-- /.post-info -->      <h1><a href="/index.md">Code Militia</a></h1>
+        </ul>        
+
+        <ul>
+                <div class="cat-border">
+                <li style="color: #F2F1EF; background-color: #6C7A89;">Categories</li>
+                    <li><a href="https://gfonseca.github.io/category/golang.html">golang</a></li>
+                    <li><a href="https://gfonseca.github.io/category/misc.html">misc</a></li>
+                </div>
+        </ul>
+
+   
+        <p> 
+        </p>
+        <p>
+        </p>
+        <p>
+        </p>
+    </sidebar>
+    
+    <maincontent>
+<h2>
+    <a href="https://gfonseca.github.io/copiando-slices.html" rel="bookmark" title="Permalink to Copiando slices">Copiando slices</a>
+</h2>
+
+<div>
+    <b>By: </b><a href="https://gfonseca.github.io/author/georgio-barbosa-da-fonseca.html">Georgio Barbosa da Fonseca</a><b>    On: </b>Wed 25 October 2017<br />
+    <b>In: </b><a href="https://gfonseca.github.io/category/golang.html" rel="bookmark" title="Permalink to golang">golang</a><br />
+    <em><b>Tags: </b>
+    </em>
+    <hr>
+</div>
+
+<div>
+    <mainarticle>
+    <h1><a href="/index.md">Code Militia</a></h1>
 <h2>Copiando slices</h2>
 <p>A função builtin <a href="https://golang.org/pkg/builtin/#copy">copy()</a> tem por intuito copiar os items de um slice origem (<strong><em>org</em></strong>) para um slice destino (<strong><em>dst</em></strong>) &#128137;</p>
 <h4>https://golang.org/pkg/builtin/#copy</h4>
@@ -55,7 +109,7 @@
     <span class="kd">var</span> <span class="nx">org</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
     <span class="kd">var</span> <span class="nx">dst</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
 
-    <span class="nx">numOfItems</span> <span class="o">:=</span> <span class="nb">copy</span><span class="p">(</span><span class="nx">dst</span><span class="p">,</span> <span class="nx">org</span><span class="p">)</span>
+    <span class="nx">numOfItemsCopied</span> <span class="o">:=</span> <span class="nb">copy</span><span class="p">(</span><span class="nx">dst</span><span class="p">,</span> <span class="nx">org</span><span class="p">)</span>
 
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%d items copiados.\n&quot;</span><span class="p">,</span> <span class="nx">numOfItems</span><span class="p">)</span>
 
@@ -166,37 +220,27 @@ copy() copia len(<strong><em>dst</em></strong>) elementos de <strong><em>org</em
 
 
 <p>Por hoje é só. &#128640;</p>
-    </div><!-- /.entry-content -->
+    </mainarticle>
+</div>
+<hr>
+        
+<div>
+        <i>If you found the article helpful, please share or cite the article, and spread the word:</i>
+            <p style="margin-top: 2%;">
+                <span><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=https://gfonseca.github.io/copiando-slices.html&text=Copiando slices&via="><img class="social-icons-a" src="https://gfonseca.github.io/theme/images/icons/twitter.png"></a></span>
+                <span><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=https://gfonseca.github.io/copiando-slices.html&t=Copiando slices"><img class="social-icons-a" src="https://gfonseca.github.io/theme/images/icons/facebook.png"></a></span>
 
-  </article>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://gfonseca.github.io/copiando-slices.html&title=Copiando slices" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img class="social-icons-a" src="https://gfonseca.github.io/theme/images/icons/linkedin.png"></a>
+            </p>
+</div>
+<hr>
+    <p><i>For any feedback or corrections, please write in to: </i><b> Georgio Barbosa da Fonseca </b></p>
+        
+    </maincontent>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+  <!-- Analytics -->
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+  </div>
 </body>
+
 </html>
