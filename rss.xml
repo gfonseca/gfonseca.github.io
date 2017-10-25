@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Code Militia</title><link>https://gfonseca.github.io/</link><description></description><lastBuildDate>Wed, 25 Oct 2017 10:20:00 -0200</lastBuildDate><item><title>Copiando slices</title><link>https://gfonseca.github.io/copiando-slices.html</link><description>&lt;h2&gt;Copiando slices&lt;/h2&gt;
+&lt;p&gt;A função builtin &lt;a href="https://golang.org/pkg/builtin/#copy"&gt;copy()&lt;/a&gt; tem por intuito copiar os items de um slice origem (&lt;strong&gt;&lt;em&gt;org&lt;/em&gt;&lt;/strong&gt;) para um slice destino (&lt;strong&gt;&lt;em&gt;dst&lt;/em&gt;&lt;/strong&gt;) &amp;#128137;&lt;/p&gt;
+&lt;h4&gt;https://golang.org/pkg/builtin/#copy&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The copy built-in function copies elements from a source slice into a destination slice. (As a special case, it also will copy …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Georgio Barbosa da Fonseca</dc:creator><pubDate>Wed, 25 Oct 2017 10:20:00 -0200</pubDate><guid isPermaLink="false">tag:gfonseca.github.io,2017-10-25:/copiando-slices.html</guid></item></channel></rss>
