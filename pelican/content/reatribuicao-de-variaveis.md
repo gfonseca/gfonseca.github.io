@@ -1,3 +1,7 @@
+Title: Reatribuição de variáveis
+Date: 2017-11-01 11:17
+Category: golang
+
 # Reatribuição de variáveis
 
 Saudações a todos. &#128075;

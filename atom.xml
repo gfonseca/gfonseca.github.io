@@ -1,5 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Code Militia</title><link href="https://gfonseca.github.io/" rel="alternate"></link><link href="https://gfonseca.github.io/atom.xml" rel="self"></link><id>https://gfonseca.github.io/</id><updated>2017-10-25T10:20:00-02:00</updated><entry><title>Copiando slices</title><link href="https://gfonseca.github.io/copiando-slices.html" rel="alternate"></link><published>2017-10-25T10:20:00-02:00</published><updated>2017-10-25T10:20:00-02:00</updated><author><name>Georgio Barbosa da Fonseca</name></author><id>tag:gfonseca.github.io,2017-10-25:/copiando-slices.html</id><summary type="html">&lt;h2&gt;Copiando slices&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Code Militia</title><link href="https://gfonseca.github.io/" rel="alternate"></link><link href="https://gfonseca.github.io/atom.xml" rel="self"></link><id>https://gfonseca.github.io/</id><updated>2017-11-01T11:17:00-02:00</updated><entry><title>Reatribuição de variáveis</title><link href="https://gfonseca.github.io/reatribuicao-de-variaveis.html" rel="alternate"></link><published>2017-11-01T11:17:00-02:00</published><updated>2017-11-01T11:17:00-02:00</updated><author><name>Georgio Barbosa da Fonseca</name></author><id>tag:gfonseca.github.io,2017-11-01:/reatribuicao-de-variaveis.html</id><summary type="html">&lt;h1&gt;Reatribuição de variáveis&lt;/h1&gt;
+&lt;p&gt;Saudações a todos. &amp;#128075;
+Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos.&lt;/p&gt;
+&lt;p&gt;Vamos direto ao código.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="nx"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nx"&gt;d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Stat …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h1&gt;Reatribuição de variáveis&lt;/h1&gt;
+&lt;p&gt;Saudações a todos. &amp;#128075;
+Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos.&lt;/p&gt;
+&lt;p&gt;Vamos direto ao código.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="nx"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nx"&gt;d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Stat&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Esta é uma operação legal!&lt;/p&gt;
+&lt;p&gt;Na maioria dos casos quando utilizamos a &lt;a href="https://golang.org/ref/spec#Short_variable_declarations"&gt;Short variable delcarations&lt;/a&gt; ( := ) o compilador não nos permite utilizá lo uma segunda vez com a mesma variável, já que essa operação nada mais é do que uma abreviação de uma declaração tradicional de variável.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;d&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;// equivale a:&lt;/span&gt;
+&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;d&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Vejamos um exemplo&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;d&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nx"&gt;d&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Saída&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./reatribuicao-de-variaveis.go:9: no new variables on left side of :=
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Como eu havia dito, o compilador não permite redeclarar uma variável no mesmo escopo, porém, por pragmatismo, existe uma situação em que você pode utilizar uma variável previamente declarada com o &lt;em&gt;Short variable declaration&lt;/em&gt; e o compilador já havia nos dado está dica:&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;no new variables on left side of :=&lt;/strong&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3&gt;Resolvendo o problema&lt;/h3&gt;
+&lt;p&gt;https://golang.org/doc/effective_go.html#redeclaration&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In a := declaration a variable v may appear even if it has already been declared, provided:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;this declaration is in the same scope as the existing declaration of v (if v is already declared in an outer scope, the declaration will create a new variable §),&lt;/li&gt;
+&lt;li&gt;the corresponding value in the initialization is assignable to v, and&lt;/li&gt;
+&lt;li&gt;there is at least one other variable in the declaration that is being declared anew.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A solução é simples, caso exista ao menos uma variável ainda não declarada do lado esquerdo do operador := é permitido utilizá lo para alterar valores de variáveis já declaradas.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nx"&gt;main&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;quot;os&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+    &lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="nx"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/tmp/reasign&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Stat&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+    &lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="kc"&gt;nil&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Falha ao abrir o arquivo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;gt;&amp;gt;&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A existência da variável &lt;strong&gt;&lt;em&gt;d&lt;/em&gt;&lt;/strong&gt; no comando &lt;strong&gt;&lt;em&gt;d, err := f.Stat()&lt;/em&gt;&lt;/strong&gt; permitiu a reatribuição da variável &lt;strong&gt;&lt;em&gt;err&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Perceba que isso não passa de uma reatribuição, e não uma redeclaração de variáveis, em outras palavras, este atalho não nos permite alterar o tipo de uma variável previamente declarada, o que torna a operação  a seguir ilegal.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nx"&gt;j&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;j&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Saída&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cannot use &amp;quot;bar&amp;quot; (type string) as type int in assignment
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Finalizando &amp;#127859;&lt;/h3&gt;
+&lt;p&gt;Este conhecimento vem a ser útil pois pelo que tenho visto até o momento, o uso do nome de variável &lt;em&gt;err&lt;/em&gt; é muito comum no tratamento de exceções, já que não temos exceções nativas em golang e o retorno de múltiplos valores por funções se torna o principal dispositivo na captura de falhas.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="nx"&gt;os&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/tmp/reasign&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Stat&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="kc"&gt;nil&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Falha ao abrir o arquivo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;gt;&amp;gt;&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Por hoje é só. &amp;#128640;&lt;/p&gt;</content></entry><entry><title>Copiando slices</title><link href="https://gfonseca.github.io/copiando-slices.html" rel="alternate"></link><published>2017-10-25T10:20:00-02:00</published><updated>2017-10-25T10:20:00-02:00</updated><author><name>Georgio Barbosa da Fonseca</name></author><id>tag:gfonseca.github.io,2017-10-25:/copiando-slices.html</id><summary type="html">&lt;h2&gt;Copiando slices&lt;/h2&gt;
 &lt;p&gt;A função builtin &lt;a href="https://golang.org/pkg/builtin/#copy"&gt;copy()&lt;/a&gt; tem por intuito copiar os items de um slice origem (&lt;strong&gt;&lt;em&gt;org&lt;/em&gt;&lt;/strong&gt;) para um slice destino (&lt;strong&gt;&lt;em&gt;dst&lt;/em&gt;&lt;/strong&gt;) &amp;#128137;&lt;/p&gt;
 &lt;h4&gt;https://golang.org/pkg/builtin/#copy&lt;/h4&gt;
 &lt;blockquote&gt;
