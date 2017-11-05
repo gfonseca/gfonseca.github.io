@@ -107,24 +107,24 @@
 <p>Note que a nossa posição de memória já está inicializada com o seu respectivo <em><a href="https://tour.golang.org/basics/12">zerovalue</a></em>, no caso 0, mas isto será abordado em outro post.</p>
 <h2>Make</h2>
 <p>A função <strong><a href="https://golang.org/pkg/builtin/#make">make</a></strong> funciona apenas para as primitivas slice, chanel e map, esses tipos em especial não podem ser apenas alocados, eles também precisam ser inicializados, com valores específicos.
-Segundo o documento oficial <a href="https://golang.org/doc/effective_go.html#allocation_make">Effective GO</a> estes tipo, são na verdades estruturas de dados que precisam ter seus campos preenchidos com os devidos valores, no caso do tipo slice por exemplo trata se de uma estrutura com os campos, data(referência para um array), tamanho, e capacidade. Diferente da função <strong>new</strong> a função <strong>make</strong> não retorna um ponteiro, mas sim um valor.</p>
+Segundo o documento oficial <a href="https://golang.org/doc/effective_go.html#allocation_make">Effective GO</a> estes tipos, são na verdade estruturas de dados que precisam ter seus campos preenchidos com os devidos valores. No caso do tipo slice por exemplo, trata se de uma estrutura com os campos, data (referência para um array), tamanho e capacidade. Diferente da função <strong>new</strong> a função <strong>make</strong> não retorna um ponteiro, mas sim um valor.</p>
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">s</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Prinln</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
 </pre></div>
 
 
-<h3>Declaração ilegal</h3>
+<h2>Declaração ilegal</h2>
 <div class="highlight"><pre><span class="nx">d</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
 </pre></div>
 
 
-<h4>Saída</h4>
+<p><strong>Saída</strong></p>
 <div class="highlight"><pre>code/make-vs-new.go:16: cannot make type int
 </pre></div>
 
 
 <h2>Finalizando &#128123;</h2>
-<p>Apesar da ambiguidade que os termos make e new podem gerar essas duas funções tem propósitos totalmente diferente. A função <strong>new</strong> realiza alocação de memória de forma similar a função maloc da linguagem C, enquanto a função <strong>make</strong> tem o propósito de inicializar primitivas especiais da linguagem.</p>
+<p>Apesar da ambiguidade que os termos make e new podem gerar, essas duas funções tem propósitos totalmente diferente. A função <strong>new</strong> realiza alocação de memória de forma similar a função maloc da linguagem C, enquanto a função <strong>make</strong> tem o propósito de inicializar primitivas especiais da linguagem.</p>
 <p>Até a próxima &#128640;</p>
     </mainarticle>
 </div>

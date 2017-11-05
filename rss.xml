@@ -13,24 +13,24 @@
 &lt;p&gt;Note que a nossa posição de memória já está inicializada com o seu respectivo &lt;em&gt;&lt;a href="https://tour.golang.org/basics/12"&gt;zerovalue&lt;/a&gt;&lt;/em&gt;, no caso 0, mas isto será abordado em outro post.&lt;/p&gt;
 &lt;h2&gt;Make&lt;/h2&gt;
 &lt;p&gt;A função &lt;strong&gt;&lt;a href="https://golang.org/pkg/builtin/#make"&gt;make&lt;/a&gt;&lt;/strong&gt; funciona apenas para as primitivas slice, chanel e map, esses tipos em especial não podem ser apenas alocados, eles também precisam ser inicializados, com valores específicos.
-Segundo o documento oficial &lt;a href="https://golang.org/doc/effective_go.html#allocation_make"&gt;Effective GO&lt;/a&gt; estes tipo, são na verdades estruturas de dados que precisam ter seus campos preenchidos com os devidos valores, no caso do tipo slice por exemplo trata se de uma estrutura com os campos, data(referência para um array), tamanho, e capacidade. Diferente da função &lt;strong&gt;new&lt;/strong&gt; a função &lt;strong&gt;make&lt;/strong&gt; não retorna um ponteiro, mas sim um valor.&lt;/p&gt;
+Segundo o documento oficial &lt;a href="https://golang.org/doc/effective_go.html#allocation_make"&gt;Effective GO&lt;/a&gt; estes tipos, são na verdade estruturas de dados que precisam ter seus campos preenchidos com os devidos valores. No caso do tipo slice por exemplo, trata se de uma estrutura com os campos, data (referência para um array), tamanho e capacidade. Diferente da função &lt;strong&gt;new&lt;/strong&gt; a função &lt;strong&gt;make&lt;/strong&gt; não retorna um ponteiro, mas sim um valor.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;s&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;make&lt;/span&gt;&lt;span class="p"&gt;([]&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Prinln&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Declaração ilegal&lt;/h3&gt;
+&lt;h2&gt;Declaração ilegal&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;d&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="nb"&gt;make&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h4&gt;Saída&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Saída&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;code/make-vs-new.go:16: cannot make type int
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2&gt;Finalizando &amp;#128123;&lt;/h2&gt;
-&lt;p&gt;Apesar da ambiguidade que os termos make e new podem gerar essas duas funções tem propósitos totalmente diferente. A função &lt;strong&gt;new&lt;/strong&gt; realiza alocação de memória de forma similar a função maloc da linguagem C, enquanto a função &lt;strong&gt;make&lt;/strong&gt; tem o propósito de inicializar primitivas especiais da linguagem.&lt;/p&gt;
+&lt;p&gt;Apesar da ambiguidade que os termos make e new podem gerar, essas duas funções tem propósitos totalmente diferente. A função &lt;strong&gt;new&lt;/strong&gt; realiza alocação de memória de forma similar a função maloc da linguagem C, enquanto a função &lt;strong&gt;make&lt;/strong&gt; tem o propósito de inicializar primitivas especiais da linguagem.&lt;/p&gt;
 &lt;p&gt;Até a próxima &amp;#128640;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Georgio Barbosa da Fonseca</dc:creator><pubDate>Sun, 05 Nov 2017 19:21:00 -0200</pubDate><guid>tag:gfonseca.github.io,2017-11-05:make-vs-new.html</guid></item><item><title>Reatribuição de variáveis</title><link>https://gfonseca.github.io/reatribuicao-de-variaveis.html</link><description>&lt;h1&gt;Reatribuição de variáveis&lt;/h1&gt;
 &lt;p&gt;Saudações a todos. &amp;#128075;
 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos.&lt;/p&gt;
