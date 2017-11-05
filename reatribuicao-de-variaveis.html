@@ -30,11 +30,11 @@
 <meta name="twitter:creator" content="">
 <meta name="twitter:url" content="https://gfonseca.github.io/reatribuicao-de-variaveis.html">
 <meta name="twitter:title" content="Code Militia ~ Reatribuição de variáveis">
-<meta name="twitter:description" content="Reatribuição de variáveis Saudações a todos. 👋 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos. Vamos direto ao código. f, err := os.Open(name) d, err := f.Stat …">
+<meta name="twitter:description" content="Reatribuição de variáveis Saudações a todos. 👋 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos. Vamos direto ao código. f, err := os.Open(name) d, err := f.Stat ...">
 
 <!-- Facebook Meta Data -->
 <meta property="og:title" content="Code Militia ~ Reatribuição de variáveis" />
-<meta property="og:description" content="Reatribuição de variáveis Saudações a todos. 👋 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos. Vamos direto ao código. f, err := os.Open(name) d, err := f.Stat …" />
+<meta property="og:description" content="Reatribuição de variáveis Saudações a todos. 👋 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos. Vamos direto ao código. f, err := os.Open(name) d, err := f.Stat ..." />
 <meta property="og:image" content="" />
 </head>
 
@@ -84,7 +84,7 @@
 </h2>
 
 <div>
-    <b>By: </b><a href="https://gfonseca.github.io/author/georgio-barbosa-da-fonseca.html">Georgio Barbosa da Fonseca</a><b>    On: </b>Wed 01 November 2017<br />
+    <b>By: </b><a href="https://gfonseca.github.io/author/georgio-barbosa-da-fonseca.html">Georgio Barbosa da Fonseca</a><b>    On: </b>Qua 01 novembro 2017<br />
     <b>In: </b><a href="https://gfonseca.github.io/category/golang.html" rel="bookmark" title="Permalink to golang">golang</a><br />
     <em><b>Tags: </b>
     </em>
@@ -97,27 +97,27 @@
 <p>Saudações a todos. &#128075;
 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos.</p>
 <p>Vamos direto ao código.</p>
-<div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<div class="highlight"><pre><span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
 <span class="nx">d</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">Stat</span><span class="p">()</span>
 </pre></div>
 
 
 <p>Esta é uma operação legal!</p>
 <p>Na maioria dos casos quando utilizamos a <a href="https://golang.org/ref/spec#Short_variable_declarations">Short variable delcarations</a> ( := ) o compilador não nos permite utilizá lo uma segunda vez com a mesma variável, já que essa operação nada mais é do que uma abreviação de uma declaração tradicional de variável.</p>
-<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">d</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">d</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="c1">// equivale a:</span>
 <span class="kd">var</span> <span class="nx">d</span> <span class="o">:=</span> <span class="mi">1</span>
 </pre></div>
 
 
 <h3>Vejamos um exemplo</h3>
-<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">d</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">d</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="nx">d</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 
 
 <h3>Saída</h3>
-<div class="highlight"><pre><span></span>./reatribuicao-de-variaveis.go:9: no new variables on left side of :=
+<div class="highlight"><pre>./reatribuicao-de-variaveis.go:9: no new variables on left side of :=
 </pre></div>
 
 
@@ -135,7 +135,7 @@ Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de vari
 </ul>
 </blockquote>
 <p>A solução é simples, caso exista ao menos uma variável ainda não declarada do lado esquerdo do operador := é permitido utilizá lo para alterar valores de variáveis já declaradas.</p>
-<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
     <span class="s">&quot;fmt&quot;</span>
@@ -160,19 +160,19 @@ Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de vari
 
 <p>A existência da variável <strong><em>d</em></strong> no comando <strong><em>d, err := f.Stat()</em></strong> permitiu a reatribuição da variável <strong><em>err</em></strong>.</p>
 <p>Perceba que isso não passa de uma reatribuição, e não uma redeclaração de variáveis, em outras palavras, este atalho não nos permite alterar o tipo de uma variável previamente declarada, o que torna a operação  a seguir ilegal.</p>
-<div class="highlight"><pre><span></span>    <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span>
+<div class="highlight"><pre>    <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span>
     <span class="nx">e</span><span class="p">,</span> <span class="nx">j</span> <span class="o">:=</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span>
 </pre></div>
 
 
 <h3>Saída</h3>
-<div class="highlight"><pre><span></span>cannot use &quot;bar&quot; (type string) as type int in assignment
+<div class="highlight"><pre>cannot use &quot;bar&quot; (type string) as type int in assignment
 </pre></div>
 
 
 <h3>Finalizando &#127859;</h3>
 <p>Este conhecimento vem a ser útil pois pelo que tenho visto até o momento, o uso do nome de variável <em>err</em> é muito comum no tratamento de exceções, já que não temos exceções nativas em golang e o retorno de múltiplos valores por funções se torna o principal dispositivo na captura de falhas.</p>
-<div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s">&quot;/tmp/reasign&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s">&quot;/tmp/reasign&quot;</span><span class="p">)</span>
 <span class="nx">s</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">Stat</span><span class="p">()</span>
 
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
@@ -185,7 +185,8 @@ Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de vari
 </pre></div>
 
 
-<p>Por hoje é só. &#128640;</p>
+<p><a href="/code/reatribuicao-de-variaveis.go">Download do exemplo</a><br/>
+Por hoje é só. &#128640;</p>
     </mainarticle>
 </div>
 <hr>

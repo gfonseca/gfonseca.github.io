@@ -105,5 +105,5 @@ if err != nil {
 
 fmt.Println(">>>", s)
 ```
-
+[Download do exemplo](/code/reatribuicao-de-variaveis.go)<br/>
 Por hoje é só. &#128640;
