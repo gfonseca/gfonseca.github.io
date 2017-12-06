@@ -9,18 +9,27 @@
   <meta name="author" content="Georgio Barbosa da Fonseca">
 
   <link rel="shortcut icon" href="">
-
+  <link rel="stylesheet" title="Dracula" href="https://highlightjs.org/static/demo/styles/solarized-dark.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    $(document.body).ready(function() {
+        $('pre').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+  </script>
   <!-- schema.org -->
   <meta itemprop="name" content="Code Militia">
   <meta itemprop="image" content="">
   <meta itemprop="description" content="">
 
   <!-- Style Meta Data -->
-  <link rel="stylesheet" href="https://gfonseca.github.io/theme/css/milligram.css" type="text/css" />
-  <link rel="stylesheet" href="https://gfonseca.github.io/theme/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="http://localhost:8765/theme/css/milligram.css" type="text/css" />
+  <link rel="stylesheet" href="http://localhost:8765/theme/css/custom.css" type="text/css" />
 
   <!-- Feed Meta Data -->
-    <link href="https://gfonseca.github.io/atom.xml" type="application/atom+xml" rel="alternate" title="Code Militia ATOM Feed" />
+    <link href="http://localhost:8765/atom.xml" type="application/atom+xml" rel="alternate" title="Code Militia ATOM Feed" />
 
   <!-- Twitter Feed -->
   <meta name="twitter:card" content="summary">
@@ -28,17 +37,17 @@
   <meta name="twitter:image" content="">
 
 <meta name="twitter:creator" content="">
-<meta name="twitter:url" content="https://gfonseca.github.io/reatribuicao-de-variaveis.html">
+<meta name="twitter:url" content="http://localhost:8765/reatribuicao-de-variaveis.html">
 <meta name="twitter:title" content="Code Militia ~ Reatribuição de variáveis">
-<meta name="twitter:description" content="Reatribuição de variáveis Saudações a todos. 👋 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos. Vamos direto ao código. f, err := os.Open(name) d, err := f.Stat ...">
+<meta name="twitter:description" content="Reatribuição de variáveis Saudações a todos. 👋 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos. Vamos direto ao código. f, err := os.Open(name) d, err := f.Stat …">
 
 <!-- Facebook Meta Data -->
 <meta property="og:title" content="Code Militia ~ Reatribuição de variáveis" />
-<meta property="og:description" content="Reatribuição de variáveis Saudações a todos. 👋 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos. Vamos direto ao código. f, err := os.Open(name) d, err := f.Stat ..." />
+<meta property="og:description" content="Reatribuição de variáveis Saudações a todos. 👋 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos. Vamos direto ao código. f, err := os.Open(name) d, err := f.Stat …" />
 <meta property="og:image" content="" />
 </head>
 
-<body>
+<body class="crt">
     <div class="container">
 
     <!-- Navbar -->
@@ -46,7 +55,7 @@
         <ul>
             <div>
                 <li>
-                    <a href="https://gfonseca.github.io"><h3>Code Militia</h3></a>
+                    <a href="http://localhost:8765"><h1>Code Militia</h1></a>
                 </li>
                 <li>
                 </li>
@@ -63,7 +72,7 @@
         <ul>
                 <div class="cat-border">
                 <li style="color: #F2F1EF; background-color: #6C7A89;">Categories</li>
-                    <li><a href="https://gfonseca.github.io/category/golang.html">golang</a></li>
+                    <li><a href="http://localhost:8765/category/golang.html">golang</a></li>
                 </div>
         </ul>
 
@@ -71,8 +80,8 @@
         <p> 
         </p>
         <p>
-            <a href="https://gfonseca.github.io/atom.xml" rel="alternate">
-                <img class="social-icons-m" src="https://gfonseca.github.io/theme/images/icons/rss.png"></a>
+            <a href="http://localhost:8765/atom.xml" rel="alternate">
+                <img class="social-icons-m" src="http://localhost:8765/theme/images/icons/rss.png"></a>
         </p>
         <p>
         </p>
@@ -80,12 +89,12 @@
     
     <maincontent>
 <h2>
-    <a href="https://gfonseca.github.io/reatribuicao-de-variaveis.html" rel="bookmark" title="Permalink to Reatribuição de variáveis">Reatribuição de variáveis</a>
+    <a href="http://localhost:8765/reatribuicao-de-variaveis.html" rel="bookmark" title="Permalink to Reatribuição de variáveis">Reatribuição de variáveis</a>
 </h2>
 
 <div>
-    <b>By: </b><a href="https://gfonseca.github.io/author/georgio-barbosa-da-fonseca.html">Georgio Barbosa da Fonseca</a><b>    On: </b>Qua 01 novembro 2017<br />
-    <b>In: </b><a href="https://gfonseca.github.io/category/golang.html" rel="bookmark" title="Permalink to golang">golang</a><br />
+    <b>By: </b><a href="http://localhost:8765/author/georgio-barbosa-da-fonseca.html">Georgio Barbosa da Fonseca</a><b>    On: </b>Wed 01 November 2017<br />
+    <b>In: </b><a href="http://localhost:8765/category/golang.html" rel="bookmark" title="Permalink to golang">golang</a><br />
     <em><b>Tags: </b>
     </em>
     <hr>
@@ -97,27 +106,27 @@
 <p>Saudações a todos. &#128075;
 Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de variáveis que pode ser desconhecidos pelos neófitos da linguagem, e que acredito, pode ser muito relevante no desenvolvimento de algoritmos.</p>
 <p>Vamos direto ao código.</p>
-<div class="highlight"><pre><span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
 <span class="nx">d</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">Stat</span><span class="p">()</span>
 </pre></div>
 
 
 <p>Esta é uma operação legal!</p>
 <p>Na maioria dos casos quando utilizamos a <a href="https://golang.org/ref/spec#Short_variable_declarations">Short variable delcarations</a> ( := ) o compilador não nos permite utilizá lo uma segunda vez com a mesma variável, já que essa operação nada mais é do que uma abreviação de uma declaração tradicional de variável.</p>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">d</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">d</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="c1">// equivale a:</span>
 <span class="kd">var</span> <span class="nx">d</span> <span class="o">:=</span> <span class="mi">1</span>
 </pre></div>
 
 
 <h3>Vejamos um exemplo</h3>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">d</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">d</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="nx">d</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 
 
 <h3>Saída</h3>
-<div class="highlight"><pre>./reatribuicao-de-variaveis.go:9: no new variables on left side of :=
+<div class="highlight"><pre><span></span>./reatribuicao-de-variaveis.go:9: no new variables on left side of :=
 </pre></div>
 
 
@@ -135,7 +144,7 @@ Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de vari
 </ul>
 </blockquote>
 <p>A solução é simples, caso exista ao menos uma variável ainda não declarada do lado esquerdo do operador := é permitido utilizá lo para alterar valores de variáveis já declaradas.</p>
-<div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
+<div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
     <span class="s">&quot;fmt&quot;</span>
@@ -160,19 +169,19 @@ Hoje gostaria de falar sobre um pequeno truque envolvendo reatribuição de vari
 
 <p>A existência da variável <strong><em>d</em></strong> no comando <strong><em>d, err := f.Stat()</em></strong> permitiu a reatribuição da variável <strong><em>err</em></strong>.</p>
 <p>Perceba que isso não passa de uma reatribuição, e não uma redeclaração de variáveis, em outras palavras, este atalho não nos permite alterar o tipo de uma variável previamente declarada, o que torna a operação  a seguir ilegal.</p>
-<div class="highlight"><pre>    <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span>
+<div class="highlight"><pre><span></span>    <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span>
     <span class="nx">e</span><span class="p">,</span> <span class="nx">j</span> <span class="o">:=</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span>
 </pre></div>
 
 
 <h3>Saída</h3>
-<div class="highlight"><pre>cannot use &quot;bar&quot; (type string) as type int in assignment
+<div class="highlight"><pre><span></span>cannot use &quot;bar&quot; (type string) as type int in assignment
 </pre></div>
 
 
 <h3>Finalizando &#127859;</h3>
 <p>Este conhecimento vem a ser útil pois pelo que tenho visto até o momento, o uso do nome de variável <em>err</em> é muito comum no tratamento de exceções, já que não temos exceções nativas em golang e o retorno de múltiplos valores por funções se torna o principal dispositivo na captura de falhas.</p>
-<div class="highlight"><pre><span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s">&quot;/tmp/reasign&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s">&quot;/tmp/reasign&quot;</span><span class="p">)</span>
 <span class="nx">s</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">Stat</span><span class="p">()</span>
 
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
@@ -194,10 +203,10 @@ Por hoje é só. &#128640;</p>
 <div>
         <i>If you found the article helpful, please share or cite the article, and spread the word:</i>
             <p style="margin-top: 2%;">
-                <span><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=https://gfonseca.github.io/reatribuicao-de-variaveis.html&text=Reatribuição de variáveis&via="><img class="social-icons-a" src="https://gfonseca.github.io/theme/images/icons/twitter.png"></a></span>
-                <span><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=https://gfonseca.github.io/reatribuicao-de-variaveis.html&t=Reatribuição de variáveis"><img class="social-icons-a" src="https://gfonseca.github.io/theme/images/icons/facebook.png"></a></span>
+                <span><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=http://localhost:8765/reatribuicao-de-variaveis.html&text=Reatribuição de variáveis&via="><img class="social-icons-a" src="http://localhost:8765/theme/images/icons/twitter.png"></a></span>
+                <span><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=http://localhost:8765/reatribuicao-de-variaveis.html&t=Reatribuição de variáveis"><img class="social-icons-a" src="http://localhost:8765/theme/images/icons/facebook.png"></a></span>
 
-                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://gfonseca.github.io/reatribuicao-de-variaveis.html&title=Reatribuição de variáveis" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img class="social-icons-a" src="https://gfonseca.github.io/theme/images/icons/linkedin.png"></a>
+                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:8765/reatribuicao-de-variaveis.html&title=Reatribuição de variáveis" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img class="social-icons-a" src="http://localhost:8765/theme/images/icons/linkedin.png"></a>
             </p>
 </div>
 <hr>

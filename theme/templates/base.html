@@ -10,7 +10,16 @@
   <meta name="author" content="{{ AUTHOR }}">
 
   <link rel="shortcut icon" href="{{ FAVICON }}">
-
+  <link rel="stylesheet" title="Dracula" href="https://highlightjs.org/static/demo/styles/solarized-dark.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    $(document.body).ready(function() {
+        $('pre').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+  </script>
   <!-- schema.org -->
   <meta itemprop="name" content="{{ SITENAME }}">
   <meta itemprop="image" content="{{ AVATAR}}">
@@ -35,7 +44,7 @@
   {% endblock %}
 </head>
 
-<body>
+<body class="crt">
     <div class="container">
 
     <!-- Navbar -->
@@ -43,7 +52,7 @@
         <ul>
             <div>
                 <li>
-                    <a href="{{ SITEURL }}"><h3>{{ SITENAME }}</h3></a>
+                    <a href="{{ SITEURL }}"><h1>{{ SITENAME }}</h1></a>
                 </li>
                 <li>
                     {% if SITEDESCRIPTION  %}

@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Georgio Barbosa da Fonseca'
 SITENAME = 'Code Militia'
-SITEURL = 'https://gfonseca.github.io'
+#SITEURL = 'https://gfonseca.github.io'
+SITEURL = 'http://localhost:8765'
 
 PATH = 'content'
 

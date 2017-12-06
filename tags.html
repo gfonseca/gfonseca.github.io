@@ -9,18 +9,27 @@
   <meta name="author" content="Georgio Barbosa da Fonseca">
 
   <link rel="shortcut icon" href="">
-
+  <link rel="stylesheet" title="Dracula" href="https://highlightjs.org/static/demo/styles/solarized-dark.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    $(document.body).ready(function() {
+        $('pre').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+  </script>
   <!-- schema.org -->
   <meta itemprop="name" content="Code Militia">
   <meta itemprop="image" content="">
   <meta itemprop="description" content="">
 
   <!-- Style Meta Data -->
-  <link rel="stylesheet" href="https://gfonseca.github.io/theme/css/milligram.css" type="text/css" />
-  <link rel="stylesheet" href="https://gfonseca.github.io/theme/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="http://localhost:8765/theme/css/milligram.css" type="text/css" />
+  <link rel="stylesheet" href="http://localhost:8765/theme/css/custom.css" type="text/css" />
 
   <!-- Feed Meta Data -->
-    <link href="https://gfonseca.github.io/atom.xml" type="application/atom+xml" rel="alternate" title="Code Militia ATOM Feed" />
+    <link href="http://localhost:8765/atom.xml" type="application/atom+xml" rel="alternate" title="Code Militia ATOM Feed" />
 
   <!-- Twitter Feed -->
   <meta name="twitter:card" content="summary">
@@ -28,7 +37,7 @@
   <meta name="twitter:image" content="">
 
 <meta name="twitter:creator" content="">
-<meta name="twitter:url" content="https://gfonseca.github.io/tags.html">
+<meta name="twitter:url" content="http://localhost:8765/tags.html">
 <meta name="twitter:title" content="Code Militia || Tags">
 <meta name="twitter:description" content="Code Militia || Tags in this website">
 
@@ -38,7 +47,7 @@
 <meta property="og:image" content="" />
 </head>
 
-<body>
+<body class="crt">
     <div class="container">
 
     <!-- Navbar -->
@@ -46,7 +55,7 @@
         <ul>
             <div>
                 <li>
-                    <a href="https://gfonseca.github.io"><h3>Code Militia</h3></a>
+                    <a href="http://localhost:8765"><h1>Code Militia</h1></a>
                 </li>
                 <li>
                 </li>
@@ -63,7 +72,7 @@
         <ul>
                 <div class="cat-border">
                 <li style="color: #F2F1EF; background-color: #6C7A89;">Categories</li>
-                    <li><a href="https://gfonseca.github.io/category/golang.html">golang</a></li>
+                    <li><a href="http://localhost:8765/category/golang.html">golang</a></li>
                 </div>
         </ul>
 
@@ -71,8 +80,8 @@
         <p> 
         </p>
         <p>
-            <a href="https://gfonseca.github.io/atom.xml" rel="alternate">
-                <img class="social-icons-m" src="https://gfonseca.github.io/theme/images/icons/rss.png"></a>
+            <a href="http://localhost:8765/atom.xml" rel="alternate">
+                <img class="social-icons-m" src="http://localhost:8765/theme/images/icons/rss.png"></a>
         </p>
         <p>
         </p>

@@ -9,18 +9,27 @@
   <meta name="author" content="Georgio Barbosa da Fonseca">
 
   <link rel="shortcut icon" href="">
-
+  <link rel="stylesheet" title="Dracula" href="https://highlightjs.org/static/demo/styles/solarized-dark.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    $(document.body).ready(function() {
+        $('pre').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+  </script>
   <!-- schema.org -->
   <meta itemprop="name" content="Code Militia">
   <meta itemprop="image" content="">
   <meta itemprop="description" content="">
 
   <!-- Style Meta Data -->
-  <link rel="stylesheet" href="https://gfonseca.github.io/theme/css/milligram.css" type="text/css" />
-  <link rel="stylesheet" href="https://gfonseca.github.io/theme/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="http://localhost:8765/theme/css/milligram.css" type="text/css" />
+  <link rel="stylesheet" href="http://localhost:8765/theme/css/custom.css" type="text/css" />
 
   <!-- Feed Meta Data -->
-    <link href="https://gfonseca.github.io/atom.xml" type="application/atom+xml" rel="alternate" title="Code Militia ATOM Feed" />
+    <link href="http://localhost:8765/atom.xml" type="application/atom+xml" rel="alternate" title="Code Militia ATOM Feed" />
 
   <!-- Twitter Feed -->
   <meta name="twitter:card" content="summary">
@@ -28,17 +37,17 @@
   <meta name="twitter:image" content="">
 
 <meta name="twitter:creator" content="">
-<meta name="twitter:url" content="https://gfonseca.github.io/make-vs-new.html">
+<meta name="twitter:url" content="http://localhost:8765/make-vs-new.html">
 <meta name="twitter:title" content="Code Militia ~ Make VS New">
-<meta name="twitter:description" content="Make() vs New() Este post será breve, trata se de uma explicação das funções embutidas make() e new(). New A função embutida new aloca espaço na memória para um determinado tipo, e retorna um ponteiro para este endereço recém alocado var i *int i = new(int) fmt.Printf(“&gt; %d”, *i ...">
+<meta name="twitter:description" content="Make() vs New() Este post será breve, trata se de uma explicação das funções embutidas make() e new(). New A função embutida new aloca espaço na memória para um determinado tipo, e retorna um ponteiro para este endereço recém alocado var i *int i = new(int) fmt.Printf(“&gt; %d”, *i …">
 
 <!-- Facebook Meta Data -->
 <meta property="og:title" content="Code Militia ~ Make VS New" />
-<meta property="og:description" content="Make() vs New() Este post será breve, trata se de uma explicação das funções embutidas make() e new(). New A função embutida new aloca espaço na memória para um determinado tipo, e retorna um ponteiro para este endereço recém alocado var i *int i = new(int) fmt.Printf(“&gt; %d”, *i ..." />
+<meta property="og:description" content="Make() vs New() Este post será breve, trata se de uma explicação das funções embutidas make() e new(). New A função embutida new aloca espaço na memória para um determinado tipo, e retorna um ponteiro para este endereço recém alocado var i *int i = new(int) fmt.Printf(“&gt; %d”, *i …" />
 <meta property="og:image" content="" />
 </head>
 
-<body>
+<body class="crt">
     <div class="container">
 
     <!-- Navbar -->
@@ -46,7 +55,7 @@
         <ul>
             <div>
                 <li>
-                    <a href="https://gfonseca.github.io"><h3>Code Militia</h3></a>
+                    <a href="http://localhost:8765"><h1>Code Militia</h1></a>
                 </li>
                 <li>
                 </li>
@@ -63,7 +72,7 @@
         <ul>
                 <div class="cat-border">
                 <li style="color: #F2F1EF; background-color: #6C7A89;">Categories</li>
-                    <li><a href="https://gfonseca.github.io/category/golang.html">golang</a></li>
+                    <li><a href="http://localhost:8765/category/golang.html">golang</a></li>
                 </div>
         </ul>
 
@@ -71,8 +80,8 @@
         <p> 
         </p>
         <p>
-            <a href="https://gfonseca.github.io/atom.xml" rel="alternate">
-                <img class="social-icons-m" src="https://gfonseca.github.io/theme/images/icons/rss.png"></a>
+            <a href="http://localhost:8765/atom.xml" rel="alternate">
+                <img class="social-icons-m" src="http://localhost:8765/theme/images/icons/rss.png"></a>
         </p>
         <p>
         </p>
@@ -80,12 +89,12 @@
     
     <maincontent>
 <h2>
-    <a href="https://gfonseca.github.io/make-vs-new.html" rel="bookmark" title="Permalink to Make VS New">Make VS New</a>
+    <a href="http://localhost:8765/make-vs-new.html" rel="bookmark" title="Permalink to Make VS New">Make VS New</a>
 </h2>
 
 <div>
-    <b>By: </b><a href="https://gfonseca.github.io/author/georgio-barbosa-da-fonseca.html">Georgio Barbosa da Fonseca</a><b>    On: </b>Dom 05 novembro 2017<br />
-    <b>In: </b><a href="https://gfonseca.github.io/category/golang.html" rel="bookmark" title="Permalink to golang">golang</a><br />
+    <b>By: </b><a href="http://localhost:8765/author/georgio-barbosa-da-fonseca.html">Georgio Barbosa da Fonseca</a><b>    On: </b>Sun 05 November 2017<br />
+    <b>In: </b><a href="http://localhost:8765/category/golang.html" rel="bookmark" title="Permalink to golang">golang</a><br />
     <em><b>Tags: </b>
     </em>
     <hr>
@@ -97,7 +106,7 @@
 <p>Este post será breve, trata se de uma explicação das funções embutidas <strong>make</strong>() e <strong>new</strong>().</p>
 <h2>New</h2>
 <p>A função embutida <strong><a href="https://golang.org/pkg/builtin/#new">new</a></strong> aloca espaço na memória para um determinado tipo, e retorna um ponteiro para este endereço recém alocado</p>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">i</span> <span class="o">*</span><span class="kt">int</span>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">i</span> <span class="o">*</span><span class="kt">int</span>
 <span class="nx">i</span> <span class="p">=</span> <span class="nb">new</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
 
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="err">“</span><span class="p">&gt;</span> <span class="o">%</span><span class="nx">d</span><span class="err">”</span><span class="p">,</span> <span class="o">*</span><span class="nx">i</span><span class="p">)</span>
@@ -108,18 +117,18 @@
 <h2>Make</h2>
 <p>A função <strong><a href="https://golang.org/pkg/builtin/#make">make</a></strong> funciona apenas para as primitivas slice, chanel e map, esses tipos em especial não podem ser apenas alocados, eles também precisam ser inicializados, com valores específicos.
 Segundo o documento oficial <a href="https://golang.org/doc/effective_go.html#allocation_make">Effective GO</a> estes tipos, são na verdade estruturas de dados que precisam ter seus campos preenchidos com os devidos valores. No caso do tipo slice por exemplo, trata se de uma estrutura com os campos, data (referência para um array), tamanho e capacidade. Diferente da função <strong>new</strong> a função <strong>make</strong> não retorna um ponteiro, mas sim um valor.</p>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">s</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">s</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Prinln</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
 </pre></div>
 
 
 <h2>Declaração ilegal</h2>
-<div class="highlight"><pre><span class="nx">d</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nx">d</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
 </pre></div>
 
 
 <p><strong>Saída</strong></p>
-<div class="highlight"><pre>code/make-vs-new.go:16: cannot make type int
+<div class="highlight"><pre><span></span>code/make-vs-new.go:16: cannot make type int
 </pre></div>
 
 
@@ -133,10 +142,10 @@ Segundo o documento oficial <a href="https://golang.org/doc/effective_go.html#al
 <div>
         <i>If you found the article helpful, please share or cite the article, and spread the word:</i>
             <p style="margin-top: 2%;">
-                <span><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=https://gfonseca.github.io/make-vs-new.html&text=Make VS New&via="><img class="social-icons-a" src="https://gfonseca.github.io/theme/images/icons/twitter.png"></a></span>
-                <span><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=https://gfonseca.github.io/make-vs-new.html&t=Make VS New"><img class="social-icons-a" src="https://gfonseca.github.io/theme/images/icons/facebook.png"></a></span>
+                <span><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=http://localhost:8765/make-vs-new.html&text=Make VS New&via="><img class="social-icons-a" src="http://localhost:8765/theme/images/icons/twitter.png"></a></span>
+                <span><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=http://localhost:8765/make-vs-new.html&t=Make VS New"><img class="social-icons-a" src="http://localhost:8765/theme/images/icons/facebook.png"></a></span>
 
-                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://gfonseca.github.io/make-vs-new.html&title=Make VS New" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img class="social-icons-a" src="https://gfonseca.github.io/theme/images/icons/linkedin.png"></a>
+                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:8765/make-vs-new.html&title=Make VS New" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img class="social-icons-a" src="http://localhost:8765/theme/images/icons/linkedin.png"></a>
             </p>
 </div>
 <hr>

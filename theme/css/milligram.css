@@ -179,7 +179,7 @@ code {
 }
 
 pre {
-  background: #f4f5f6;
+  background: rgb(4, 19, 3);
   border-left: 0.3rem solid #9b4dca;
   overflow-y: hidden;
 }
